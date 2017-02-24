@@ -1,0 +1,6 @@
+.todo {
+	&-header {
+		background-color: lighten($headerColor, 20%);
+		padding: 20px 10px;
+	}
+}

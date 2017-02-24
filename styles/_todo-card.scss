@@ -1,0 +1,80 @@
+.todo {
+	&-card {
+		background-color: #E3FFBD;
+		padding: 20px 10px;
+		@include borderRadius($generalRadius);
+	
+		&-header {
+			border-bottom: 1px solid black;
+			padding-bottom: 5px;
+		}
+	}
+
+	&-btn {
+		display: inline-block;
+		background-color: $buttonDefaultColor;
+		padding: 7px 15px;
+		@include borderRadius($radiusSmall);
+		@include transition(
+			background-color 0.2s ease-out, 
+			color 0.2s ease-out
+		);
+		
+		&:hover {
+			background-color: darken($buttonDefaultColor, 20%);
+			color: white;
+		}
+
+		&-group {
+			font-size: 0;
+			
+			.todo-btn {
+				font-size: 1.6rem;
+
+				&:first-child {
+					@include borderRadius($radiusSmall 0 0 $radiusSmall);
+				}
+				
+				&:last-child {
+					@include borderRadius(0 $radiusSmall $radiusSmall 0);
+				}
+			}
+
+		}
+	}
+
+	&-control {
+		display: inline-block;
+		font-size: 5.5rem;
+		line-height: 0.5;
+		
+		&-close {
+			&:before {
+				content:"\00D7";
+				display: inline-block;
+			}
+
+			&:hover {	
+				animation: twist 1s ease-in-out alternate infinite;
+			}
+		}
+		
+		&-add {
+			&:before {
+				content:"+";
+				display: inline-block;
+			}
+
+			&:hover {	
+				animation: twist 1s ease-in-out alternate infinite;
+			}
+		}
+	}
+
+	&-control,
+	&-btn {
+		&:hover {
+			cursor: pointer;
+		}
+	}
+}

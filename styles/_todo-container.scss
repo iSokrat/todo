@@ -1,0 +1,29 @@
+.todo {
+	&-container {
+		display: -webkit-box; 
+  		display: -ms-flexbox;
+  		display: -webkit-flex;
+  		display: flex;
+  		justify-content: space-around;
+	}
+
+	&-block {
+		border: 1px solid $headerColor;
+		@include borderRadius($generalRadius);
+
+		&-header {
+			background-color: $headerColor;
+			padding: 10px;
+			@include borderRadius($generalRadius);
+		}
+
+		&-content {
+			padding: 10px;
+			
+			> :not(:first-child) {
+				margin-top: 10px;
+			}
+		}
+	}
+
+}
