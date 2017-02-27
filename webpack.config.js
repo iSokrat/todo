@@ -1,22 +1,22 @@
-const path = require('path');
-const Webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+var path = require('path');
+var Webpack = require('webpack');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-const NODE_ENV = process.env.NODE_ENV;
-const isProduction = (NODE_ENV === 'production');
+var NODE_ENV = process.env.NODE_ENV;
+var isProduction = (NODE_ENV === 'production');
 
 // SCSS LOADERS SETTINGS
-const scssLoaders = [
+var scssLoaders = [
   'css-loader',
   'sass-loader'
 ];
 
-const bundleName = 'app-bundle';
+var bundleName = 'app-bundle';
 
-const config = {
+var config = {
     name: 'js',
     entry: [
-        './scripts/app.js',
+        './app/app.module.js',
         './styles/entry.scss'
     ],
     output: {

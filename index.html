@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="todoApp">
 <head>
+	<meta charset="utf-8">
 	<title>Todo</title>
 	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 	<link rel="stylesheet" href="public/dist/app-bundle.css">
-	<meta charset="utf-8">
 </head>
 <body>
 	<header class="todo-header">
@@ -13,64 +13,47 @@
 			<span class="todo-control todo-control-close"></span>
 		</div>
 	</header>
-
-	<div class="todo-container">
-		<div class="todo-block">
-			<div class="todo-block-header clearfix">
-				<div class="todo-control-panel pull-right">
-					<span class="todo-control todo-control-close"></span>
+	
+	<main class="main">
+		<div class="todo-container">
+			<div class="todo-block">
+				<div class="todo-block-header clearfix">
+					<div class="todo-control-panel pull-right">
+						<span class="todo-control todo-control-close"></span>
+					</div>
+					<h3>
+						Todo
+					</h3>
 				</div>
-				<h3>
-					Todo
-				</h3>
-			</div>
-			<div class="todo-block-content">
-				<div class="todo-card">
-					<div class="todo-card-header clearfix">
-						<div class="todo-control-panel pull-right">
-							<span class="todo-control todo-control-close"></span>
+				<div class="todo-block-content">
+					<todo-card></todo-card>
+					<!-- <div class="todo-card">
+						<div class="todo-card-header clearfix">
+							<div class="todo-control-panel pull-right">
+								<span class="todo-control todo-control-close"></span>
+							</div>
+							<h4>
+								Plan 1
+							</h4>
 						</div>
-						<h4>
-							Plan 1
-						</h4>
-					</div>
-					<div class="todo-card-content">
-						<p>
-							You must to do it as soon as fast.
-						</p>
-					</div>
-					<div class="todo-card-footer">
-						<div class="todo-btn-group">
-							<a class="todo-btn" role="button">Left</a>
-							<a class="todo-btn" role="button">Right</a>
+						<div class="todo-card-content">
+							<p>
+								You must to do it as soon as fast.
+							</p>
 						</div>
-					</div>
-				</div>
-				<div class="todo-card">
-					<div class="todo-card-header clearfix">
-						<div class="todo-control-panel pull-right">
-							<span class="todo-control todo-control-close"></span>
+						<div class="todo-card-footer">
+							<div class="todo-btn-group">
+								<a class="todo-btn" role="button">Left</a>
+								<a class="todo-btn" role="button">Right</a>
+							</div>
 						</div>
-						<h4>
-							Plan 1
-						</h4>
-					</div>
-					<div class="todo-card-content">
-						<p>
-							You must to do it as soon as fast.
-						</p>
-					</div>
-					<div class="todo-card-footer">
-						<div class="todo-btn-group">
-							<a class="todo-btn" role="button">Left</a>
-							<a class="todo-btn" role="button">Right</a>
-						</div>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</div>
-	</div>
+	</main>	
 
-	<script src="public/dist/app-bundle.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js" defer></script>
+	<script src="public/dist/app-bundle.js" defer></script>
 </body>
 </html>
