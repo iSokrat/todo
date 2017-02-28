@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<title>Todo</title>
 	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-	<link rel="stylesheet" href="public/dist/app-bundle.css">
+	<link rel="stylesheet" href="./dist/app-bundle.css">
 </head>
 <body>
 	<header class="todo-header">
@@ -26,7 +26,9 @@
 					</h3>
 				</div>
 				<div class="todo-block-content">
-					<todo-card></todo-card>
+					<div ng-controller="todoCardController as todoCard">
+						<todo-card info="todoCard.info"></todo-card>
+					</div>
 					<!-- <div class="todo-card">
 						<div class="todo-card-header clearfix">
 							<div class="todo-control-panel pull-right">
@@ -54,6 +56,6 @@
 	</main>	
 
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js" defer></script>
-	<script src="public/dist/app-bundle.js" defer></script>
+	<script src="./dist/app-bundle.js" defer></script>
 </body>
 </html>

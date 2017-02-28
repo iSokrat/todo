@@ -1,16 +1,15 @@
-<div ng-controller="todoCardController as todoCard">
-<div class="todo-card">
+ <div class="todo-card">
 	<div class="todo-card-header clearfix">
 		<div class="todo-control-panel pull-right">
 			<span class="todo-control todo-control-close"></span>
 		</div>
 		<h4>
-			{{todoCard.title}}
+			{{todoCardInfo.title}}
 		</h4>
 	</div>
 	<div class="todo-card-content">
 		<p>
-			{{todoCard.description}}
+			{{todoCardInfo.description}}
 		</p>
 	</div>
 	<div class="todo-card-footer">
@@ -19,5 +18,4 @@
 			<a class="todo-btn" role="button">Right</a>
 		</div>
 	</div>
-</div>
 </div>

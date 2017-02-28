@@ -16,7 +16,7 @@ var bundleName = 'app-bundle';
 var config = {
     name: 'js',
     entry: [
-        './app/app.module.js',
+        './app/index.js',
         './styles/entry.scss'
     ],
     output: {
@@ -40,6 +40,10 @@ var config = {
                 test: /\.scss$/, 
                 loader: ExtractTextPlugin.extract('style-loader', scssLoaders.join('!'))
             },
+            {
+                test: /\.html$/,
+                loader: "html-loader"
+            }
         ]
     },
     plugins: [

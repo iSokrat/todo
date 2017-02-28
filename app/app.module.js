@@ -1,8 +1,8 @@
-import todo from './directives/todo-card/todo-card.directive.js';
+'use strict';
 
-angular.module('todoApp', [todo]);
+const app = angular.module('todoApp', []);
 
-console.log(todo);
+export default app;
 
 
 
