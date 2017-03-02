@@ -1,15 +1,15 @@
 'use strict';
 
 import app from '../../app.module';
-import template from './todo-card.template.html';
+import template from './todo-block.template.html';
 
-app.directive('todoCard', function() {
+app.directive('todoBlock', function() {
 	return {
         restrict: 'E',
         template: template,
         scope: {
         	title: '=',
-            description: '=',
+            todoCards: '=',
         }
         //link: linkFunc,
         //controllerAs: 'vm',

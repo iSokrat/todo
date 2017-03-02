@@ -1,15 +1,14 @@
 'use strict';
 
-import app from '../../app.module';
-import template from './todo-card.template.html';
+import app from '../../../app.module';
+import template from './todo-block-header.template.html';
 
-app.directive('todoCard', function() {
+app.directive('todoCardHeader', function() {
 	return {
         restrict: 'E',
         template: template,
         scope: {
-        	title: '=',
-            description: '=',
+        	title: '='
         }
         //link: linkFunc,
         //controllerAs: 'vm',
