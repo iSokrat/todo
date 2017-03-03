@@ -10,9 +10,9 @@ app.directive('todoBlock', function() {
         scope: {
         	title: '=',
             todoCards: '=',
-        }
+            id: '='
+        },
         //link: linkFunc,
-        //controllerAs: 'vm',
-        //bindToController: true // because the scope is isolated
+        //controllerAs: 'vm'
     };
 });

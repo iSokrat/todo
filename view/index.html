@@ -17,8 +17,9 @@
 	<main class="main">
 		<div class="todo-container" ng-controller="todoContainerController as todoContainer">
 			
-			<todo-block ng-repeat="todoBlock in todoContainer.todos" 
-						title="todoBlock.title" 
+			<todo-block ng-repeat="todoBlock in todoContainer.todos"
+						id="todoBlock._id" 
+						title="todoBlock.title"
 						todo-cards="todoBlock.cards">
 			</todo-block>
 			

@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
 var db  = require('./db/app.database');
+var bodyParser = require('body-parser'); 
 
 var todoCard = require('./routes/todo-card.router.js');
 
@@ -8,7 +9,10 @@ app.use(express.static(__dirname + '/view'));
 app.use(express.static(__dirname + '/public'));
 app.use(express.static(__dirname + '/app')); 
 
-app.use('/todo_card', todoCard);
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
+
+app.use('/todo', todoCard);
 
 app.get('/', function (req, res) {
   res.status(200).sendFile('./index.html');
