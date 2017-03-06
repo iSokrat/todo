@@ -1,11 +1,14 @@
 import app from '../../../app.module';
 
-app.controller('todoBlockController', ['server', function(server) {
-	this.createNewTodoCard = function() {
-		console.log("Add new todo сlick!");
+app.controller('todoBlockHeaderController', ['$scope', 'server', function($scope, server) {
+	this.createNewTodoCard = (todoBlockId) => {
+		server.createNewTodoCard.save({
+				id: todoBlockId, 
+			}, (newCard) => {
+			var todoBlock = $scope.$parent.$parent;
 
-		server.createNewTodoCard.save({}, function(todoCard) {
-			console.log("+");
+			todoBlock.todoCards.push(newCard);	
+			console.log("Add new todo card!");
 		});
 	};
 }]);

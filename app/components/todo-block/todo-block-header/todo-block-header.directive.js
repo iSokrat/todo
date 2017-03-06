@@ -3,12 +3,13 @@
 import app from '../../../app.module';
 import template from './todo-block-header.template.html';
 
-app.directive('todoCardHeader', function() {
+app.directive('todoBlockHeader', function() {
 	return {
         restrict: 'E',
         template: template,
         scope: {
-        	title: '='
+        	title: '=',
+            id: '='
         }
         //link: linkFunc,
         //controllerAs: 'vm',
