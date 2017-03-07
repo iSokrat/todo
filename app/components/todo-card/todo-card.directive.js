@@ -10,6 +10,8 @@ app.directive('todoCard', function() {
         scope: {
         	title: '=',
             description: '=',
+            cardId: '=',
+            blockId: '='
         }
         //link: linkFunc,
         //controllerAs: 'vm',

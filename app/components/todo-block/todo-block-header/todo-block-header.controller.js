@@ -6,7 +6,6 @@ app.controller('todoBlockHeaderController', ['$scope', 'server', function($scope
 				id: todoBlockId, 
 			}, (newCard) => {
 			var todoBlock = $scope.$parent.$parent;
-
 			todoBlock.todoCards.push(newCard);	
 			console.log("Add new todo card!");
 		});

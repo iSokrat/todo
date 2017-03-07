@@ -1,15 +1,15 @@
- <div class="todo-card">
+ <div ng-controller="todoCardController as todoCard" class="todo-card">
 	<div class="todo-card-header clearfix">
 		<div class="todo-control-panel pull-right">
-			<span class="todo-control todo-control-close"></span>
+			<span ng-click="todoCard.deleteTodoCard(cardId, blockId)" class="todo-control todo-control-close"></span>
 		</div>
 		<h4>
-			{{title}}
+			{{ title }}
 		</h4>
 	</div>
 	<div class="todo-card-content">
 		<p>
-			{{description}}
+			{{ description }}
 		</p>
 	</div>
 	<div class="todo-card-footer">

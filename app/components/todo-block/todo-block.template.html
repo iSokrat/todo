@@ -1,9 +1,13 @@
 <div class="todo-block">
-	<todo-block-header title="title" id="id"> 
+	<todo-block-header title="title" block-id="id"> 
 	</todo-block-header>		
 	<div class="todo-block-content">
 		<div ng-repeat="card in todoCards">
-			<todo-card title="card.title" description="card.description"></todo-card>
+			<todo-card
+				card-id="card._id"
+				block-id="id"
+				title="card.title" 
+				description="card.description"></todo-card>
 		</div>
 	</div>
 </div>

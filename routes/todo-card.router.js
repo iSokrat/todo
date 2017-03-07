@@ -3,22 +3,52 @@ var router = express.Router();
 
 var Todos = require('../db/models/todos.model');
 
+var a = 0;
+
 router.post('/create', function(req, res) {
 	Todos.findOne({ 
 		_id: req.body.id 
 	}).exec()
 	  .then(function (todoBlock){
-	  		var newCard = {};
+	  		var newCard = {
+	  			title: ++a
+	  		};
 
 	 		todoBlock.cards.push(newCard);
 	 		todoBlock.save();
 
-  			return newCard;
+	 		var newCardWithIdProp = todoBlock.cards[todoBlock.cards.length - 1];
+
+  			return newCardWithIdProp;
 	}).then(function(newCard) {
   			res.status(200).send(newCard);
 	}).catch(function(err) {
-		console.log("/create FAIL: " + err);
-	});;
+		console.log('/create FAIL: ' + err);
+		res.sendStatus(500);
+	});
+});
+
+router.post('/delete', function(req, res) {
+	Todos.findOne({ 
+		_id: req.body.blockId
+	}).exec()
+	  .then(function (todoBlock) {
+	  		var removedCardIndex = todoBlock.cards.findIndex((card) => card._id == req.body.cardId);
+	 		
+	  		if (removedCardIndex === -1) {
+	 			throw new Error('Card with id ' + req.body.cardId + ' was not found!');
+	 		}
+
+	 		todoBlock.cards.splice(removedCardIndex, 1);
+	 		todoBlock.save();
+	 		
+  			return req.body.cardId;
+	}).then(function(deletedCardId) {
+  			res.status(200).send(deletedCardId);
+	}).catch(function(err) {
+		console.log("/delete FAIL: " + err);
+		res.sendStatus(500);
+	});
 });
 
 router.get('/', function(req, res) {
@@ -29,6 +59,7 @@ router.get('/', function(req, res) {
 			res.status(200).json(doc);
 		}).catch(function(err) {
 			console.log("/todo FAIL: " + err);
+			res.sendStatus(500);
 		});
 });
 
