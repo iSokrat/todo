@@ -21,5 +21,13 @@ app.service(
 				console.log('Todo card was deleted!');
 			}, (err) => console.error(err));
 		}
+
+		this.deleteTodoBlock = function(todoBlockId, scope) {
+			server.deleteTodoBlock.save({}, {
+				blockId: todoBlockId,
+			}, ({ deletedTodoBlockId }) => { 
+				scope.$emit('deleteTodoBlock', deletedTodoBlockId);
+			}, (err) => console.error(err));
+		}
 	}
 ]);

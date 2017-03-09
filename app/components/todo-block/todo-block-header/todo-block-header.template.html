@@ -1,7 +1,8 @@
 <div ng-controller="todoBlockHeaderController as todoBlock" class="todo-block-header clearfix">
 	<div class="todo-control-panel pull-right">
 		<span ng-click="todoBlock.createNewTodoCard(blockId)" class="todo-control todo-control-add"></span>
-		<span class="todo-control todo-control-close"></span>
+		<span ng-click="todoBlock.deleteTodoBlock(blockId)" class="todo-control todo-control-close"></span>
+		<span class="todo-control fa fa-pencil" aria-hidden="true"></span>
 	</div>
 	<h3>
 		{{ title }}

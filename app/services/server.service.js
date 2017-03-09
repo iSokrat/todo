@@ -7,5 +7,6 @@ app.service('server', [
 		this.createNewTodoCard = $resource('/todo/create', {}, {});
 		this.deleteTodoCard = $resource('/todo/delete', {});
 		this.createNewTodoBlock = $resource('/todo_block/create', {}, {});
+		this.deleteTodoBlock = $resource('/todo_block/delete', {}, {});
 	}
 ]);
