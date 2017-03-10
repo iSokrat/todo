@@ -1,6 +1,6 @@
 import app from '../../../app.module';
 
-app.controller('todoBlockHeaderController', ['$scope', 'server', 'dom', function($scope, server, dom) {
+app.controller('todoBlockHeaderController', ['$scope', 'server', 'dom', function($scope, server, dom) {	
 	this.createNewTodoCard = (todoBlockId) => {
 		server.createNewTodoCard.save({
 				id: todoBlockId, 
@@ -13,4 +13,8 @@ app.controller('todoBlockHeaderController', ['$scope', 'server', 'dom', function
 	this.deleteTodoBlock = (todoBlockId) => {
 		dom.deleteTodoBlock(todoBlockId, $scope);
 	}
+
+	this.showTodoEditWindow = (todoBlockId) => {
+		//$scope.$emit('showTodoEditWindow', );
+	};
 }]);

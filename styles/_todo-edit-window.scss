@@ -1,0 +1,48 @@
+.todo-edit {
+  &-window {
+    display: inline-block;
+    border: 1px solid red;
+    padding: $generalPadding;
+    background-color: white;
+    @include borderRadius($generalRadius);
+    
+    &-default {
+      width: 260px;
+      height: 300px;
+    }
+  }
+
+  &-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    .todo-list-item:not(:first-child) {
+      margin-top: $generalPadding; 
+    }
+  }
+}
+
+.todo-window-header {
+  padding: 5px 0 10px;
+}
+
+.todo-list-item > * {
+  display: block;
+  border: 1px solid $generalColor2;
+  padding: $generalPadding / 2;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.todo-list-item {
+  label {  
+    @include borderRadius($generalPadding $generalPadding 0 0);
+    border-bottom: 0;
+    text-align: center;
+  }
+
+  input { 
+    @include borderRadius(0 0 $generalPadding $generalPadding);
+  }
+}

@@ -14,4 +14,5 @@ import todoBlockHeaderDirective from './components/todo-block/todo-block-header/
 import todoCardController from './components/todo-card/todo-card.controller';
 import todoCardDirective from  './components/todo-card/todo-card.directive';
 
-
+import todoEditWindowController from './components/todo-edit-window/todo-edit-window.controller';
+import todoEditWindowDirective from './components/todo-edit-window/todo-edit-window.directive';

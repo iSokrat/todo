@@ -11,16 +11,20 @@
 		<todo-header></todo-header>
 	</header>
 	
+	<div class="todo-fill" ng-show="todoContainer.showLockFillState">
+		<todo-edit-window></todo-edit-window>	
+	</div>
+
 	<main class="main">
 		<div class="todo-container">			
 			<todo-block ng-repeat="todoBlock in todoContainer.todos"
-						id="todoBlock._id" 
+						id="todoBlock._id"
 						title="todoBlock.title"
 						todo-cards="todoBlock.cards">
 			</todo-block>
 		</div>
 	</main>	
-	
+
 	<script src="https://use.fontawesome.com/adff4fbbf5.js" async></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js" defer></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-resource.js" defer></script>

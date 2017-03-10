@@ -27,8 +27,6 @@ router.post('/delete', function(req, res) {
 			deletedTodoBlockId: req.body.blockId
 		});	
 	});
-
-	
 });
 
 module.exports = router;

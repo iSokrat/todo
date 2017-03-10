@@ -1,0 +1,24 @@
+<div ng-controller="todoEditWindowController as editWindow"
+     class="todo-edit-window todo-edit-window-default block-center">
+  <a ng-click="editWindow.hideEditWindow()" class="fa fa-close fa-lg" role="button"></a>
+  <h3 class="todo-window-header text-center">Edit panel</h3>
+  <form class="todo-edit-panel">
+    <ul class="todo-edit-list">
+      <li class="todo-list-item">
+        <label for="title">Title</label>
+        <input ng-model="editWindow.info.title" id="title" type="text" value="{{editWindow.info.title}}">
+      </li>
+      <li class="todo-list-item">
+        <label for="desc">Description</label>
+        <input ng-model="editWindow.info.description" id="desc" type="text" value="{{editWindow.info.description}}">
+      </li>    
+      <li class="todo-list-item">
+        <label for="color">Color</label>
+        <input id="color" type="color">
+      </li>
+      <li class="todo-list-item">
+        <a ng-click="editWindow.updateTodoCard()" class="todo-btn text-center" role="button">Save!</a>
+      </li>
+    </ul>
+  </form>
+</div>

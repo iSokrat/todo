@@ -1,6 +1,10 @@
 $generalColor: #48B484;
 $headerColor:  #7cff54;
-$buttonDefaultColor: #FF7457;
+
+$generalColor2: #FF7457;
+$buttonDefaultColor: $generalColor2;
 
 $generalRadius: 10px;
-$radiusSmall:   $generalRadius / 2;
+$radiusSmall: $generalRadius / 2;
+
+$generalPadding: 10px;

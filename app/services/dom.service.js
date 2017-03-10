@@ -8,7 +8,6 @@ app.service(
 				cardId:  todoCardId,
 				blockId: todoBlockId,
 			}, (todoBlock) => { 
-
 				var deletedIndex = todoBlockScope.todoCards.findIndex((card) => card._id == todoCardId);
 
 				if (deletedIndex === -1) {
@@ -21,6 +20,21 @@ app.service(
 				console.log('Todo card was deleted!');
 			}, (err) => console.error(err));
 		}
+
+		// this.updateTodoCard = function(data) {
+		// 	server.updateTodoCard.update({}, data, (todoBlock) => { 
+		// 		var deletedIndex = todoBlockScope.todoCards.findIndex((card) => card._id == todoCardId);
+
+		// 		if (deletedIndex === -1) {
+		// 			console.log('Todo card was not deleted!');
+		// 			return;
+		// 		}
+
+		// 		todoBlockScope.todoCards.splice(deletedIndex, 1);
+				
+		// 		console.log('Todo card was deleted!');
+		// 	}, (err) => console.error(err));
+		// }
 
 		this.deleteTodoBlock = function(todoBlockId, scope) {
 			server.deleteTodoBlock.save({}, {

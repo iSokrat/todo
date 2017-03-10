@@ -2,6 +2,7 @@
 	<div class="todo-card-header clearfix">
 		<div class="todo-control-panel pull-right">
 			<span ng-click="todoCard.deleteTodoCard(cardId, blockId)" class="todo-control todo-control-close"></span>
+			<span ng-click="todoCard.editTodoCard({title, description}, cardId, blockId)" class="todo-control todo-control-close fa fa-pencil"></span>
 		</div>
 		<h4>
 			{{ title }}
