@@ -1,20 +1,29 @@
 import app from '../../../app.module';
 
-app.controller('todoBlockHeaderController', ['$scope', 'server', 'dom', function($scope, server, dom) {	
-	this.createNewTodoCard = (todoBlockId) => {
-		server.createNewTodoCard.save({
+app.controller('todoBlockHeaderController', [
+	'$scope', '$rootScope', 'server', 'dom', 'updating',
+	function($scope, $rootScope, server, dom, updating) {	
+		this.createNewTodoCard = (todoBlockId) => {
+			server.createNewTodoCard.save({
 				id: todoBlockId, 
 			}, (newCard) => {
-			var todoBlock = $scope.$parent.$parent;
-			todoBlock.todoCards.push(newCard);	
-		});
-	};
+				var todoBlock = $scope.$parent.$parent;
+				todoBlock.todoCards.push(newCard);	
+			});
+		};
 
-	this.deleteTodoBlock = (todoBlockId) => {
-		dom.deleteTodoBlock(todoBlockId, $scope);
-	}
+		this.deleteTodoBlock = (todoBlockId) => {
+			dom.deleteTodoBlock(todoBlockId, $scope);
+		}
 
-	this.showTodoEditWindow = (todoBlockId) => {
-		//$scope.$emit('showTodoEditWindow', );
-	};
-}]);
+		this.editTodoBlock = (todoInfo, blockId) => {
+			const data = { 
+				...todoInfo, 
+				blockId,
+				update: updating.updateTodoBlock,
+			};
+
+			$rootScope.$broadcast('showEditWindow');
+			$rootScope.$broadcast('setInfoForEditWindow', data);
+		}
+	}]);

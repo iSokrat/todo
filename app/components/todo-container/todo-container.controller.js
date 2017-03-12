@@ -24,7 +24,7 @@ app.controller('todoContainerController', [
 		$scope.$on('showEditWindow', () => this.showLockFillState = true);
 		$scope.$on('hideEditWindow', () => this.showLockFillState = false);
 
-		$scope.$on('updateTodoCard', (event, data) => {
+		$scope.$on('updateTodoCardScope', (event, data) => {
 			const todoCards = this.todos
 				.find((todoBlock) => todoBlock._id == data.blockId)
 				.cards;
@@ -33,8 +33,22 @@ app.controller('todoContainerController', [
 
 			updatingTodoCard.title = data.title;
 			updatingTodoCard.description = data.description;
-			
+			updatingTodoCard.bgcolor = data.bgcolor;
+
 			console.log('Todo card was updated! ');
 			$scope.$broadcast('hideEditWindow');
+		});
+
+		$scope.$on('updateTodoBlockScope', (event, data) => {
+			const updatingTodoBlock = this.todos
+				.find((todoBlock) => todoBlock._id == data.blockId);
+
+
+			updatingTodoBlock.title = data.title;
+			updatingTodoCard.bgcolor = data.bgcolor;
+			
+			$scope.$broadcast('hideEditWindow');
+			
+			console.log('Todo block was updated! ');
 		});
 }]);

@@ -11,12 +11,7 @@ app.controller('todoEditWindowController', ['server', '$scope', '$rootScope', fu
 		$scope.$emit('hideEditWindow');
 	};
 
-	this.updateTodoCard = () => {
-		server.updateTodoCard.update({}, this.info, function(updatedCard) {
-			console.log(updatedCard);
-			
-			$rootScope.$broadcast('updateTodoCard', updatedCard);
-			console.log("Updated!");
-		}, console.error);
+	this.updateTodo = () => {
+		this.info.update(this.info);
 	}
 }]);

@@ -10,6 +10,7 @@ app.directive('todoCard', function() {
         scope: {
         	title: '=',
             description: '=',
+            bgcolor: '=',
             cardId: '=',
             blockId: '='
         }

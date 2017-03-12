@@ -5,9 +5,13 @@
   		display: -webkit-flex;
   		display: flex;
   		justify-content: space-around;
+
+  		flex-wrap: wrap;
+
 	}
 
 	&-block {
+		width: 300px;
 		border: 1px solid $headerColor;
 		@include borderRadius($generalRadius);
 

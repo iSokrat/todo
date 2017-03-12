@@ -43,31 +43,9 @@
 		}
 	}
 
-	&-control {
-		display: inline-block;
-		font-size: 5.5rem;
-		line-height: 0.5;
-		
-		&-close {
-			&:before {
-				content:"\00D7";
-				display: inline-block;
-			}
-
-			&:hover {	
-				animation: twist 1s ease-in-out alternate infinite;
-			}
-		}
-		
-		&-add {
-			&:before {
-				content:"+";
-				display: inline-block;
-			}
-
-			&:hover {	
-				animation: twist 1s ease-in-out alternate infinite;
-			}
+	&-control {	
+		&:hover {	
+			animation: twist 1s ease-in-out alternate;
 		}
 	}
 

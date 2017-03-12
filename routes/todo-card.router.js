@@ -11,7 +11,7 @@ router.post('/create', function(req, res) {
 	}).exec()
 	.then(function (todoBlock){
 		var newCard = {
-			title: ++a
+			title: 'Without name',
 		};
 
 		todoBlock.cards.push(newCard);
@@ -40,6 +40,7 @@ router.put('/edit', function(req, res) {
 
 		updatingTodoCard.title = req.body.title;
 		updatingTodoCard.description = req.body.description;
+		updatingTodoCard.bgcolor = req.body.bgcolor;
 
 		todoBlock.save();
 		return req.body;

@@ -6,18 +6,27 @@
     <ul class="todo-edit-list">
       <li class="todo-list-item">
         <label for="title">Title</label>
-        <input ng-model="editWindow.info.title" id="title" type="text" value="{{editWindow.info.title}}">
+        <input ng-model="editWindow.info.title" 
+               id="title" 
+               type="text" 
+               value="{{editWindow.info.title}}">
       </li>
       <li class="todo-list-item">
         <label for="desc">Description</label>
-        <input ng-model="editWindow.info.description" id="desc" type="text" value="{{editWindow.info.description}}">
+        <input ng-model="editWindow.info.description" 
+               id="desc" 
+               type="text"
+               value="{{editWindow.info.description}}">
       </li>    
       <li class="todo-list-item">
         <label for="color">Color</label>
-        <input id="color" type="color">
+        <input ng-model="editWindow.info.bgcolor" 
+               id="color" 
+               type="color"
+               value="{{editWindow.info.bgcolor}}">
       </li>
       <li class="todo-list-item">
-        <a ng-click="editWindow.updateTodoCard()" class="todo-btn text-center" role="button">Save!</a>
+        <a ng-click="editWindow.updateTodo()" class="todo-btn text-center" role="button">Save!</a>
       </li>
     </ul>
   </form>

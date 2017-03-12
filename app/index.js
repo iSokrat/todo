@@ -1,5 +1,6 @@
 import serverService from './services/server.service';
 import domService from './services/dom.service';
+import updatingService from './services/updating.service';
 
 import todoHeaderController from './components/todo-header/todo-header.controller';
 import todoHeaderDirective from './components/todo-header/todo-header.directive';

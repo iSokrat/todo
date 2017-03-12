@@ -2,9 +2,11 @@ var mongoose = require('mongoose');
 
 var TodosSchema = mongoose.Schema({
     title: String,
+    bgcolor: String,
     cards: [{
     	title: String,
-    	description: String
+    	description: String,
+    	bgcolor: String,
     }]
 });
 
