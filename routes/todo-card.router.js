@@ -29,8 +29,6 @@ router.post('/create', function(req, res) {
 });
 
 router.put('/edit', function(req, res) {
-	console.log(req.body);
-
 	Todos.findOne({
 		_id: req.body.blockId,
 	}).exec()

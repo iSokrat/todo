@@ -17,4 +17,10 @@ app.controller('todoCardController', ['dom', '$scope', '$rootScope', 'updating',
 		$rootScope.$broadcast('showEditWindow');
 		$rootScope.$broadcast('setInfoForEditWindow', data);
 	}
+
+	$scope.$watch("bgcolor", () => {
+		this.style = {
+			'background-color': $scope.bgcolor || ''
+		}
+	});
 }]);

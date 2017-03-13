@@ -13,10 +13,14 @@
 	&-block {
 		width: 300px;
 		border: 1px solid $headerColor;
+
+
+		@include transition(border 1s ease-out);
 		@include borderRadius($generalRadius);
 
 		&-header {
 			background-color: $headerColor;
+			@include transition(background-color 1s ease-out);
 			padding: 10px;
 			@include borderRadius($generalRadius);
 		}

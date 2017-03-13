@@ -9,6 +9,7 @@ app.directive('todoBlock', function() {
         template: template,
         scope: {
         	title: '=',
+            bgcolor: '=',
             todoCards: '=',
             id: '='
         },

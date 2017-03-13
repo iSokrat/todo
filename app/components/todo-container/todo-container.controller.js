@@ -45,7 +45,7 @@ app.controller('todoContainerController', [
 
 
 			updatingTodoBlock.title = data.title;
-			updatingTodoCard.bgcolor = data.bgcolor;
+			updatingTodoBlock.bgcolor = data.bgcolor;
 			
 			$scope.$broadcast('hideEditWindow');
 			

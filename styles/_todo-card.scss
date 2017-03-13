@@ -2,8 +2,9 @@
 	&-card {
 		background-color: #E3FFBD;
 		padding: 20px 10px;
+		@include transition(background-color 1s ease-out);
 		@include borderRadius($generalRadius);
-	
+		
 		&-header {
 			border-bottom: 1px solid black;
 			padding-bottom: 5px;

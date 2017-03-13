@@ -23,7 +23,14 @@ app.controller('todoBlockHeaderController', [
 				update: updating.updateTodoBlock,
 			};
 
+			console.log(data);
 			$rootScope.$broadcast('showEditWindow');
 			$rootScope.$broadcast('setInfoForEditWindow', data);
 		}
+
+		$scope.$watch('bgcolor', () => {
+			this.style = {
+				'background-color' : $scope.bgcolor
+			}
+		});
 	}]);

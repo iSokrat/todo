@@ -1,5 +1,7 @@
-<div class="todo-block">
-	<todo-block-header title="title" block-id="id"> 
+<div ng-controller="todoBlockController as todoBlock" 
+	 ng-style="todoBlock.style"
+	 class="todo-block">
+	<todo-block-header title="title" block-id="id" bgcolor='bgcolor'> 
 	</todo-block-header>		
 	<div class="todo-block-content">
 		<div ng-repeat="card in todoCards">

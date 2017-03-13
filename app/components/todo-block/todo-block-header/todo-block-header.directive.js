@@ -9,7 +9,8 @@ app.directive('todoBlockHeader', function() {
         template: template,
         scope: {
         	title: '=',
-            blockId: '='
+            blockId: '=',
+            bgcolor: '='
         }
         //link: linkFunc,
         //controllerAs: 'vm',
