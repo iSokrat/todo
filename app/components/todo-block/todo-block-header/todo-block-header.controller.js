@@ -1,10 +1,11 @@
-import app from '../../../app.module';
+
 function controller($scope, $rootScope, server, dom, updating) {	
 	this.createNewTodoCard = (todoBlockId) => {
 		server.createNewTodoCard.save({
 			id: todoBlockId, 
 		}, (newCard) => {
-			var todoBlock = $scope.$parent.$parent;
+			var todoBlock = $scope.$parent.todoBlock;
+		
 			todoBlock.todoCards.push(newCard);	
 		});
 	};
