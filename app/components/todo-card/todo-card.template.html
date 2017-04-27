@@ -1,20 +1,23 @@
- <div ng-controller="todoCardController as todoCard" 
-	  ng-style="todoCard.style"
+ <div ng-style="todoCard.style"
  	  class="todo-card">
 	<div class="todo-card-header clearfix">
 		<div class="todo-control-panel pull-right">
-			<span ng-click="todoCard.deleteTodoCard(cardId, blockId)" 
+			<span ng-click="todoCard.deleteTodoCard(todoCard.cardId, todoCard.blockId)" 
 				  class="todo-control fa fa-times" aria-hidden="true"></span>
-			<span ng-click="todoCard.editTodoCard({title, description, bgcolor}, cardId, blockId)" 
+			<span ng-click="todoCard.editTodoCard({
+				title: 		 todoCard.title, 
+				description: todoCard.description, 
+				bgcolor: 	 todoCard.bgcolor
+			}, todoCard.cardId, todoCard.blockId)" 
 				  class="todo-control fa fa-pencil" aria-hidden="true"></span>
 		</div>
 		<h4>
-			{{ title }}
+			{{ todoCard.title }}
 		</h4>
 	</div>
 	<div class="todo-card-content">
 		<p>
-			{{ description }}
+			{{ todoCard.description }}
 		</p>
 	</div>
 	<div class="todo-card-footer">

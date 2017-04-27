@@ -1,6 +1,4 @@
-import app from '../../app.module';
-
-app.controller('todoCardController', ['dom', '$scope', '$rootScope', 'updating', function(dom, $scope, $rootScope, updating) {
+function controller(dom, $scope, $rootScope, updating) {
 	this.deleteTodoCard = (cardId, blockId) => {
 		var todoBlockScope = $scope.$parent.$parent.$parent; // bad :(
 		dom.deleteTodoCard(cardId, blockId, todoBlockScope);
@@ -23,4 +21,9 @@ app.controller('todoCardController', ['dom', '$scope', '$rootScope', 'updating',
 			'background-color': $scope.bgcolor || ''
 		}
 	});
-}]);
+}
+
+export default [
+	'dom', '$scope', '$rootScope', 'updating', 
+	controller
+];

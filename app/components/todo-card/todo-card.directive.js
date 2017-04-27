@@ -2,6 +2,7 @@
 
 import app from '../../app.module';
 import template from './todo-card.template.html';
+import controller from './todo-card.controller';
 
 app.directive('todoCard', function() {
 	return {
@@ -13,9 +14,9 @@ app.directive('todoCard', function() {
             bgcolor: '=',
             cardId: '=',
             blockId: '='
-        }
-        //link: linkFunc,
-        //controllerAs: 'vm',
-        //bindToController: true // because the scope is isolated
+        },
+        controller,
+        controllerAs: 'todoCard',
+        bindToController: true // because the scope is isolated
     };
 });
