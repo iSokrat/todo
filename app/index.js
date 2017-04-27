@@ -10,7 +10,6 @@ import todoContainerController from './components/todo-container/todo-container.
 import todoBlockController from './components/todo-block/todo-block.controller';
 import todoBlockDirective from './components/todo-block/todo-block.directive';
 
-import todoBlockHeaderController from './components/todo-block/todo-block-header/todo-block-header.controller';
 import todoBlockHeaderDirective from './components/todo-block/todo-block-header/todo-block-header.directive';
 
 import todoCardController from './components/todo-card/todo-card.controller';
