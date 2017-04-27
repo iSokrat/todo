@@ -1,9 +1,12 @@
-import app from '../../app.module';
-
-app.controller('todoBlockController', ['$scope', function($scope) {
-	$scope.$watch("bgcolor",() => {
+function controller($scope) {
+	$scope.$watch('bgcolor',() => {
 		this.style = {
-			'border': `1px solid ${$scope.bgcolor}`
+			'border': `1px solid ${ $scope.bgcolor }`
 		}
 	});
-}]);
+}
+
+export default [
+	'$scope', 
+	controller
+];

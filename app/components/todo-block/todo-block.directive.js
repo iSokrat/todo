@@ -2,6 +2,7 @@
 
 import app from '../../app.module';
 import template from './todo-block.template.html';
+import controller from './todo-block.controller';
 
 app.directive('todoBlock', function() {
 	return {
@@ -13,7 +14,8 @@ app.directive('todoBlock', function() {
             todoCards: '=',
             id: '='
         },
-        //link: linkFunc,
-        //controllerAs: 'vm'
+        controller,
+        controllerAs: 'todoBlock',
+        bindToController: true
     };
 });
