@@ -7,7 +7,6 @@ import todoHeaderDirective from './components/todo-header/todo-header.directive'
 
 import todoContainerController from './components/todo-container/todo-container.controller';
 
-import todoBlockController from './components/todo-block/todo-block.controller';
 import todoBlockDirective from './components/todo-block/todo-block.directive';
 
 import todoBlockHeaderDirective from './components/todo-block/todo-block-header/todo-block-header.directive';
