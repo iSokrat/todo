@@ -2,6 +2,7 @@
 
 import app from '../../../app.module';
 import template from './todo-block-header.template.html';
+import controller from './todo-block-header.controller';
 
 app.directive('todoBlockHeader', function() {
 	return {
@@ -11,9 +12,9 @@ app.directive('todoBlockHeader', function() {
         	title: '=',
             blockId: '=',
             bgcolor: '='
-        }
-        //link: linkFunc,
-        //controllerAs: 'vm',
-        //bindToController: true // because the scope is isolated
+        },
+        controller,
+        controllerAs: 'todoBlock',
+        bindToController: true // because the scope is isolated
     };
 });
