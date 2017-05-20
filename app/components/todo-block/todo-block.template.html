@@ -4,7 +4,7 @@
 	</todo-block-header>	
 	
 	<div class="todo-block-content">
-		<div ng-repeat="card in todoBlock.todoCards">
+		<div ng-repeat="card in todoBlock.todoCards track by $index">
 			<todo-card
 				card-id="card._id"
 				block-id="todoBlock.id"

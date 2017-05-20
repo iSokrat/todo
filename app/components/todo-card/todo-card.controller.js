@@ -1,8 +1,9 @@
 function controller(dom, $scope, $rootScope, updating) {
 	this.deleteTodoCard = (cardId, blockId) => {
-		var todoBlockScope = $scope.$parent.$parent.$parent; // bad :(
+		var todoBlockScope = $scope.$parent.$parent; // bad :(
+	
 		dom.deleteTodoCard(cardId, blockId, todoBlockScope);
-	}
+	};
 
 	this.editTodoCard = (todoInfo, cardId, blockId) => {
 		const data = { 
@@ -14,11 +15,19 @@ function controller(dom, $scope, $rootScope, updating) {
 
 		$rootScope.$broadcast('showEditWindow');
 		$rootScope.$broadcast('setInfoForEditWindow', data);
-	}
+	};
 
-	$scope.$watch("bgcolor", () => {
+	this.moveLeft = () => {
+		$rootScope.$broadcast('todoCardMoveLeft', this);
+	};
+
+	this.moveRight = () => {
+		$rootScope.$broadcast('todoCardMoveRight', this);
+	};
+
+	$scope.$watch("todoCard.bgcolor", () => {
 		this.style = {
-			'background-color': $scope.bgcolor || ''
+			'background-color': this.bgcolor || ''
 		}
 	});
 }

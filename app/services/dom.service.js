@@ -8,14 +8,20 @@ app.service(
 				cardId:  todoCardId,
 				blockId: todoBlockId,
 			}, (todoBlock) => { 
-				var deletedIndex = todoBlockScope.todoCards.findIndex((card) => card._id == todoCardId);
+				var deletedIndex = todoBlockScope
+					.todoBlock
+					.todoCards
+					.findIndex((card) => card._id == todoCardId);
 
 				if (deletedIndex === -1) {
 					console.log('Todo card was not deleted!');
 					return;
 				}
 
-				todoBlockScope.todoCards.splice(deletedIndex, 1);
+				todoBlockScope
+					.todoBlock
+					.todoCards
+					.splice(deletedIndex, 1);
 				
 				console.log('Todo card was deleted!');
 			}, (err) => console.error(err));

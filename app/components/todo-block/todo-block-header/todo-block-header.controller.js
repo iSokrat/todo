@@ -1,4 +1,3 @@
-
 function controller($scope, $rootScope, server, dom, updating) {	
 	this.createNewTodoCard = (todoBlockId) => {
 		server.createNewTodoCard.save({
@@ -21,7 +20,6 @@ function controller($scope, $rootScope, server, dom, updating) {
 			update: updating.updateTodoBlock,
 		};
 
-		console.log(data);
 		$rootScope.$broadcast('showEditWindow');
 		$rootScope.$broadcast('setInfoForEditWindow', data);
 	}
